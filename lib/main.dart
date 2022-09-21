@@ -14,7 +14,8 @@ class SensiableESApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sensiable Environmental Sensor App',
       theme: ThemeData.light().copyWith(),
-      home: null,
+      home: const OpeningScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
