@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sensiable_es_mobile/screens/login_screen.dart';
 import 'package:sensiable_es_mobile/screens/opening_screen.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class SensiableESApp extends StatelessWidget {
       theme: ThemeData.light().copyWith(),
       routes: {
         '/opening': (context) => const OpeningScreen(),
+        '/login': (context) => const LoginScreen()
       },
       initialRoute: '/opening',
       debugShowCheckedModeBanner: false,
