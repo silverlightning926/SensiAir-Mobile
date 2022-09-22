@@ -60,6 +60,48 @@ class LoginScreen extends StatelessWidget {
               buttonText: 'LOGIN',
               onPressed: () {},
             ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 25.0,
+                right: 25.0,
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const Text(
+                        'Don\'t have an account?',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/signup');
+                        },
+                        child: const Text(
+                          'Sign Up',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Divider(
+                    color: Colors.white,
+                    thickness: 1.5,
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
