@@ -16,21 +16,22 @@ class SignUpScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Column(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
                   './assets/sensiableLogo.png',
-                  scale: 2.5,
+                  scale: 6,
                 ),
                 const SizedBox(
-                  height: 20,
+                  width: 20,
                 ),
                 const Text(
                   'SENSIABLE',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 45,
+                    fontSize: 35,
                   ),
                 ),
               ],
