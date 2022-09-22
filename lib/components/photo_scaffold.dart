@@ -24,7 +24,12 @@ class PhotoScaffold extends StatelessWidget {
         Scaffold(
           resizeToAvoidBottomInset: false,
           backgroundColor: Colors.transparent,
-          body: body,
+          body: Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 10.0,
+            ),
+            child: body,
+          ),
         ),
       ],
     );
