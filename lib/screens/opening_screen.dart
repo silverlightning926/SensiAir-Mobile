@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sensiable_es_mobile/components/photo_scaffold.dart';
-import 'package:sensiable_es_mobile/components/rounded_button.dart';
+
+import '../components/photo_scaffold.dart';
+import '../components/rounded_button.dart';
 
 class OpeningScreen extends StatelessWidget {
   const OpeningScreen({super.key});
