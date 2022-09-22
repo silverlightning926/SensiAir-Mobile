@@ -77,6 +77,48 @@ class SignUpScreen extends StatelessWidget {
               buttonText: 'SIGN UP',
               onPressed: () {},
             ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 25.0,
+                right: 25.0,
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const Text(
+                        'Already have an account?',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/login');
+                        },
+                        child: const Text(
+                          'Login',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Divider(
+                    color: Colors.white,
+                    thickness: 1.5,
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
