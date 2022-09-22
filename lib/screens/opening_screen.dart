@@ -43,7 +43,9 @@ class OpeningScreen extends StatelessWidget {
                   buttonText: 'LOGIN',
                 ),
                 RoundedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/signup');
+                  },
                   buttonText: 'SIGN UP',
                 ),
               ],
