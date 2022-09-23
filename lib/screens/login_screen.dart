@@ -11,7 +11,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: PhotoScaffold(
-        imagePath: './assets/openingPageBG.jpeg',
+        imagePath: './assets/images/bgPhoto1.jpeg',
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -19,7 +19,7 @@ class LoginScreen extends StatelessWidget {
             Column(
               children: [
                 Image.asset(
-                  './assets/sensiableLogo.png',
+                  './assets/images/sensiableLogo.png',
                   scale: 2.5,
                 ),
                 const SizedBox(
