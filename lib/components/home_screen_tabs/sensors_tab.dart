@@ -12,20 +12,32 @@ class SensorTab extends StatefulWidget {
 class _SensorTabState extends State<SensorTab> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: const [
-        SensorButton(
-          sensorName: 'Living Room',
-          buttonColor: Color(0x88AA0000),
+    return Stack(
+      children: [
+        Expanded(
+          child: Container(
+            color: const Color.fromARGB(255, 218, 218, 218),
+          ),
         ),
-        SensorButton(
-          sensorName: 'Kitchen',
-          buttonColor: Color(0x8800AA00),
-        ),
-        SensorButton(
-          sensorName: 'Kitchen',
-          buttonColor: Color(0x88AAAA00),
+        ListView(
+          padding: const EdgeInsets.all(10),
+          children: [
+            SensorButton(
+              sensorName: 'Living Room',
+              buttonColor: const Color(0xFFAA0000),
+              onPressed: () {},
+            ),
+            SensorButton(
+              sensorName: 'Kitchen',
+              buttonColor: const Color(0xFF00AA00),
+              onPressed: () {},
+            ),
+            SensorButton(
+              sensorName: 'Bathroom',
+              buttonColor: const Color(0xFFAAAA00),
+              onPressed: () {},
+            ),
+          ],
         ),
       ],
     );
