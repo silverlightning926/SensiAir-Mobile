@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sensiable_es_mobile/components/home_screen_tabs/sensors_tab.dart';
 
-import '../components/parameter_button.dart';
+import '../components/home_screen_tabs/dashboard_tab.dart';
 import '../components/photo_scaffold.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,6 +12,21 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 0;
+
+  List tabs = [
+    const DashboardTab(
+      currentAQI: 50,
+      currentTemp: 35,
+      currentHumidity: 80,
+      currentCO2: 390,
+      currrentPM25: 35,
+      currentVOC: 80,
+      currentPressure: 390,
+    ),
+    const SensorTab(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return PhotoScaffold(
@@ -36,6 +52,12 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       imagePath: './assets/images/bgPhoto2.jpeg',
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (value) {
+          setState(() {
+            _currentIndex = value;
+          });
+        },
+        currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
         backgroundColor: const Color.fromARGB(255, 45, 45, 45),
         unselectedItemColor: Colors.white.withOpacity(0.5),
@@ -59,239 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 20.0,
-                horizontal: 10.0,
-              ),
-              child: Container(
-                padding: const EdgeInsets.all(5.0),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(186, 46, 120, 63),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Column(
-                        children: const [
-                          Text(
-                            'Home',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 15,
-                            ),
-                          ),
-                          Text(
-                            'Good',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 17,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: const [
-                          Icon(
-                            Icons.update,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            '1 min ago',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 135,
-                          width: 135,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              width: 2.0,
-                              color: Colors.white,
-                            ),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              Text(
-                                '50',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 45,
-                                ),
-                              ),
-                              Text(
-                                'AQI',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 15,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          height: 75,
-                          width: 75,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              width: 2.0,
-                              color: Colors.white,
-                            ),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              Text(
-                                'Ideal',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 10,
-                                ),
-                              ),
-                              Text(
-                                '50',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 30,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          height: 75,
-                          width: 75,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              width: 2.0,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              color: const Color.fromARGB(255, 218, 218, 218),
-              child: GridView.count(
-                padding: const EdgeInsets.all(20.0),
-                crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-                children: [
-                  ParameterButton(
-                    title: 'Temperature',
-                    value: '35',
-                    unit: 'C',
-                    icon: const Icon(
-                      Icons.thermostat_rounded,
-                      color: Colors.green,
-                      size: 60,
-                    ),
-                    onPressed: () {},
-                  ),
-                  ParameterButton(
-                    title: 'Humidity',
-                    value: '80',
-                    unit: '%',
-                    icon: const Icon(
-                      Icons.water_drop_rounded,
-                      color: Colors.red,
-                      size: 60,
-                    ),
-                    onPressed: () {},
-                  ),
-                  ParameterButton(
-                    title: 'CO2',
-                    value: '390',
-                    unit: 'ppm',
-                    icon: const Icon(
-                      Icons.cloud_rounded,
-                      color: Colors.yellow,
-                      size: 60,
-                    ),
-                    onPressed: () {},
-                  ),
-                  ParameterButton(
-                    title: 'PM2.5',
-                    value: '35',
-                    unit: 'ug/m3',
-                    icon: const Icon(
-                      Icons.air_rounded,
-                      color: Colors.yellow,
-                      size: 60,
-                    ),
-                    onPressed: () {},
-                  ),
-                  ParameterButton(
-                    title: 'VOC',
-                    value: '80',
-                    unit: 'ppm',
-                    icon: const Icon(
-                      Icons.bug_report_rounded,
-                      color: Colors.red,
-                      size: 60,
-                    ),
-                    onPressed: () {},
-                  ),
-                  ParameterButton(
-                    title: 'Pressure',
-                    value: '390',
-                    unit: '',
-                    icon: const Icon(
-                      Icons.arrow_forward_rounded,
-                      color: Colors.green,
-                      size: 60,
-                    ),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
+      body: tabs[_currentIndex],
     );
   }
 }
