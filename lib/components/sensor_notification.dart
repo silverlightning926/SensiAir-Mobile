@@ -1,0 +1,77 @@
+import 'package:flutter/material.dart';
+
+class SensorNotification extends StatelessWidget {
+  final Color notificationColor;
+  final String notificationHeader;
+  final String notificationBody;
+  final DateTime dateTimeStamp;
+  final Icon notificationIcon;
+
+  const SensorNotification({
+    super.key,
+    required this.notificationColor,
+    required this.notificationHeader,
+    required this.notificationBody,
+    required this.dateTimeStamp,
+    required this.notificationIcon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 10,
+        vertical: 5,
+      ),
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        height: 115,
+        decoration: BoxDecoration(
+          color: notificationColor,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  notificationHeader,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 30,
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      notificationBody,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                      ),
+                    ),
+                    Text(
+                      'Time: ${dateTimeStamp.hour % 12}:${dateTimeStamp.minute} on ${dateTimeStamp.day}/${dateTimeStamp.month}/${dateTimeStamp.year}',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            notificationIcon,
+          ],
+        ),
+      ),
+    );
+  }
+}

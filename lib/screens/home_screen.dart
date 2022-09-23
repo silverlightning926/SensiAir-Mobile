@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sensiable_es_mobile/components/home_screen_tabs/notification_tab.dart';
 import 'package:sensiable_es_mobile/components/home_screen_tabs/sensors_tab.dart';
 
 import '../components/home_screen_tabs/dashboard_tab.dart';
@@ -25,12 +26,14 @@ class _HomeScreenState extends State<HomeScreen> {
       currentPressure: 390,
     ),
     const SensorTab(),
+    const NotificationTab(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return PhotoScaffold(
       appBar: AppBar(
+        toolbarHeight: 75,
         leading: Padding(
           padding: const EdgeInsets.only(
             top: 10,
