@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 
 class PhotoScaffold extends StatelessWidget {
   final Widget? body;
+  final PreferredSizeWidget? appBar;
+  final Widget? bottomNavigationBar;
 
   final String imagePath;
 
   const PhotoScaffold({
     Key? key,
     this.body,
+    this.appBar,
+    this.bottomNavigationBar,
     required this.imagePath,
   }) : super(key: key);
 
@@ -22,14 +26,11 @@ class PhotoScaffold extends StatelessWidget {
           fit: BoxFit.cover,
         ),
         Scaffold(
+          appBar: appBar,
+          bottomNavigationBar: bottomNavigationBar,
           resizeToAvoidBottomInset: false,
           backgroundColor: Colors.transparent,
-          body: Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 10.0,
-            ),
-            child: body,
-          ),
+          body: body,
         ),
       ],
     );

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sensiable_es_mobile/screens/login_screen.dart';
-import 'package:sensiable_es_mobile/screens/opening_screen.dart';
-import 'package:sensiable_es_mobile/screens/sign_up_screen.dart';
+
+import 'screens/home_screen.dart';
+import 'screens/login_screen.dart';
+import 'screens/opening_screen.dart';
+import 'screens/sign_up_screen.dart';
 
 void main() {
   runApp(const SensiableESApp());
@@ -20,8 +22,9 @@ class SensiableESApp extends StatelessWidget {
         '/opening': (context) => const OpeningScreen(),
         '/login': (context) => const LoginScreen(),
         '/signup': (context) => const SignUpScreen(),
+        '/home': (context) => const HomeScreen(),
       },
-      initialRoute: '/opening',
+      initialRoute: '/home',
       debugShowCheckedModeBanner: false,
     );
   }
