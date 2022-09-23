@@ -15,6 +15,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return PhotoScaffold(
       appBar: AppBar(
+        leading: Padding(
+          padding: const EdgeInsets.only(
+            top: 10,
+            left: 10,
+          ),
+          child: Image.asset('./assets/images/sensiableLogo.png'),
+        ),
         elevation: 0,
         backgroundColor: Colors.transparent,
         actions: [
