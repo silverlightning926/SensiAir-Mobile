@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sensiable_es_mobile/components/home_screen_tabs/notification_tab.dart';
 import 'package:sensiable_es_mobile/components/home_screen_tabs/sensors_tab.dart';
+import 'package:sensiable_es_mobile/components/home_screen_tabs/settings_tab.dart';
 
 import '../components/home_screen_tabs/dashboard_tab.dart';
 import '../components/photo_scaffold.dart';
@@ -27,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     ),
     const SensorTab(),
     const NotificationTab(),
+    const SettingsTab()
   ];
 
   @override
