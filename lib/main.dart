@@ -24,7 +24,7 @@ class SensiableESApp extends StatelessWidget {
         '/signup': (context) => const SignUpScreen(),
         '/home': (context) => const HomeScreen(),
       },
-      initialRoute: '/home',
+      initialRoute: '/opening',
       debugShowCheckedModeBanner: false,
     );
   }
