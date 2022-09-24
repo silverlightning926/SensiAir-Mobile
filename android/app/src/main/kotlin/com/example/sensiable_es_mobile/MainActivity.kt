@@ -1,4 +1,4 @@
-package com.example.sensiable_es_mobile
+package com.sensiable.sensiable_es_mobile
 
 import io.flutter.embedding.android.FlutterActivity
 
