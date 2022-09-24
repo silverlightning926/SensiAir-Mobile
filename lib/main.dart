@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
 import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/opening_screen.dart';
 import 'screens/sign_up_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  FirebaseApp app = await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const SensiableESApp());
 }
 
