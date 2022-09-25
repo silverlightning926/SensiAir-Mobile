@@ -1,11 +1,25 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import '../components/icon_text_field.dart';
 import '../components/photo_scaffold.dart';
 import '../components/rounded_button.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({
+    super.key,
+  });
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  final TextEditingController userNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +52,10 @@ class SignUpScreen extends StatelessWidget {
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
+              children: [
                 IconTextField(
-                  icon: Icon(
+                  controller: userNameController,
+                  icon: const Icon(
                     Icons.account_circle_rounded,
                     color: Colors.white,
                     size: 50,
@@ -48,7 +63,8 @@ class SignUpScreen extends StatelessWidget {
                   hintText: 'Username',
                 ),
                 IconTextField(
-                  icon: Icon(
+                  controller: emailController,
+                  icon: const Icon(
                     Icons.email_rounded,
                     color: Colors.white,
                     size: 50,
@@ -56,7 +72,8 @@ class SignUpScreen extends StatelessWidget {
                   hintText: 'Email',
                 ),
                 IconTextField(
-                  icon: Icon(
+                  controller: phoneController,
+                  icon: const Icon(
                     Icons.phone_rounded,
                     color: Colors.white,
                     size: 50,
@@ -64,7 +81,9 @@ class SignUpScreen extends StatelessWidget {
                   hintText: 'Phone Number',
                 ),
                 IconTextField(
-                  icon: Icon(
+                  controller: passwordController,
+                  obscureText: false,
+                  icon: const Icon(
                     Icons.password_rounded,
                     color: Colors.white,
                     size: 50,
@@ -75,7 +94,17 @@ class SignUpScreen extends StatelessWidget {
             ),
             RoundedButton(
               buttonText: 'SIGN UP',
-              onPressed: () {},
+              onPressed: () {
+                FirebaseAuth.instance
+                    .createUserWithEmailAndPassword(
+                        email: emailController.text,
+                        password: passwordController.text)
+                    .then((value) {})
+                    .then((value) => {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, '/home', (route) => false),
+                        });
+              },
             ),
             Padding(
               padding: const EdgeInsets.only(
