@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "865700506918",
+    "project_id": "sensiablees-mobile",
+    "storage_bucket": "sensiablees-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865700506918:android:e1d942fed7e9f881d1a5e7",
+        "android_client_info": {
+          "package_name": "com.sensiable.sensiable_es_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "865700506918-15ef9s78s63sh0li3egkkugike7cj07h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp620PGM8xhcvX1An8Tvrzgzf6d48jJj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "865700506918-15ef9s78s63sh0li3egkkugike7cj07h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "865700506918-iipb6egbpvj1cec57irdm4vg9ag0v5el.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sensiableEsMobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
