@@ -7,6 +7,8 @@ class IconTextField extends StatelessWidget {
   final Color textFieldColor;
   final Color hintTextColor;
   final Color inputTextColor;
+  final TextEditingController? controller;
+  final bool obscureText;
 
   const IconTextField({
     Key? key,
@@ -15,6 +17,8 @@ class IconTextField extends StatelessWidget {
     this.textFieldColor = const Color(0xAA000000),
     this.hintTextColor = Colors.grey,
     this.inputTextColor = Colors.white,
+    this.controller,
+    this.obscureText = false,
   }) : super(key: key);
 
   @override
@@ -25,6 +29,8 @@ class IconTextField extends StatelessWidget {
         horizontal: 35,
       ),
       child: TextField(
+        controller: controller,
+        obscureText: obscureText,
         style: TextStyle(
           color: inputTextColor,
         ),
