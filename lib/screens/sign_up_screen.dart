@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +83,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 IconTextField(
                   controller: passwordController,
-                  obscureText: false,
+                  obscureText: true,
                   icon: const Icon(
                     Icons.password_rounded,
                     color: Colors.white,
@@ -99,8 +100,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     .createUserWithEmailAndPassword(
                         email: emailController.text,
                         password: passwordController.text)
-                    .then((value) {})
-                    .then((value) => {
+                    .then((value) {
+                  final user = <String, dynamic>{
+                    "userName": userNameController.text,
+                    "phone": phoneController.text,
+                  };
+
+                  FirebaseFirestore.instance
+                      .collection("userInfo")
+                      .doc('${value.user?.uid}')
+                      .set(user);
+                }).then((value) => {
                           Navigator.pushNamedAndRemoveUntil(
                               context, '/home', (route) => false),
                         });
