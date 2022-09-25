@@ -129,7 +129,7 @@ class _DashboardTabState extends State<DashboardTab> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Container(
