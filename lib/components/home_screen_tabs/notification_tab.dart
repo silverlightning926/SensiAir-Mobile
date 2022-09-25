@@ -27,12 +27,9 @@ class _NotificationTabState extends State<NotificationTab> {
               notificationHeader: 'Living Room',
               notificationBody: 'Temperature crossed 45C',
               dateTimeStamp: DateTime.now(),
-              notificationIcon: const Icon(
-                Icons.warning_rounded,
-                size: 75,
-                color: Colors.yellow,
-              ),
-            )
+              notificationIcon: Icons.warning_rounded,
+              iconColor: Colors.yellow,
+            ),
           ],
         ),
       ],

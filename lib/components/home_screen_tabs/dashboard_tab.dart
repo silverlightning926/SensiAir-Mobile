@@ -93,12 +93,12 @@ class _DashboardTabState extends State<DashboardTab> {
                     ),
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        height: 135,
-                        width: 135,
+                        height: 130,
+                        width: 130,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
@@ -128,6 +128,9 @@ class _DashboardTabState extends State<DashboardTab> {
                             ),
                           ],
                         ),
+                      ),
+                      SizedBox(
+                        width: 10,
                       ),
                       Container(
                         height: 75,
@@ -162,17 +165,6 @@ class _DashboardTabState extends State<DashboardTab> {
                           ],
                         ),
                       ),
-                      Container(
-                        height: 75,
-                        width: 75,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            width: 2.0,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ],
@@ -194,66 +186,48 @@ class _DashboardTabState extends State<DashboardTab> {
                   title: 'Temperature',
                   value: widget.currentTemp.toString(),
                   unit: 'C',
-                  icon: const Icon(
-                    Icons.thermostat_rounded,
-                    color: Colors.green,
-                    size: 60,
-                  ),
+                  icon: Icons.thermostat_rounded,
+                  iconColor: Colors.green,
                   onPressed: () {},
                 ),
                 ParameterButton(
                   title: 'Humidity',
                   value: widget.currentHumidity.toString(),
                   unit: '%',
-                  icon: const Icon(
-                    Icons.water_drop_rounded,
-                    color: Colors.red,
-                    size: 60,
-                  ),
+                  icon: Icons.water_drop_rounded,
+                  iconColor: Colors.red,
                   onPressed: () {},
                 ),
                 ParameterButton(
                   title: 'CO2',
                   value: widget.currentCO2.toString(),
                   unit: 'ppm',
-                  icon: const Icon(
-                    Icons.cloud_rounded,
-                    color: Colors.yellow,
-                    size: 60,
-                  ),
+                  icon: Icons.cloud_rounded,
+                  iconColor: Colors.yellow,
                   onPressed: () {},
                 ),
                 ParameterButton(
                   title: 'PM2.5',
                   value: widget.currrentPM25.toString(),
                   unit: 'ug/m3',
-                  icon: const Icon(
-                    Icons.air_rounded,
-                    color: Colors.yellow,
-                    size: 60,
-                  ),
+                  icon: Icons.air_rounded,
+                  iconColor: Colors.yellow,
                   onPressed: () {},
                 ),
                 ParameterButton(
                   title: 'VOC',
                   value: widget.currentVOC.toString(),
                   unit: 'ppm',
-                  icon: const Icon(
-                    Icons.bug_report_rounded,
-                    color: Colors.red,
-                    size: 60,
-                  ),
+                  icon: Icons.bug_report_rounded,
+                  iconColor: Colors.red,
                   onPressed: () {},
                 ),
                 ParameterButton(
                   title: 'Pressure',
                   value: widget.currentPressure.toString(),
                   unit: '',
-                  icon: const Icon(
-                    Icons.arrow_forward_rounded,
-                    color: Colors.green,
-                    size: 60,
-                  ),
+                  icon: Icons.arrow_forward_rounded,
+                  iconColor: Colors.red,
                   onPressed: () {},
                 ),
               ],

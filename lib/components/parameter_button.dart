@@ -4,7 +4,8 @@ class ParameterButton extends StatelessWidget {
   final String title;
   final String value;
   final String unit;
-  final Icon icon;
+  final IconData icon;
+  final Color iconColor;
 
   final Function() onPressed;
 
@@ -14,6 +15,7 @@ class ParameterButton extends StatelessWidget {
     required this.value,
     required this.unit,
     required this.icon,
+    required this.iconColor,
     required this.onPressed,
   }) : super(key: key);
 
@@ -36,7 +38,7 @@ class ParameterButton extends StatelessWidget {
             textAlign: TextAlign.start,
             style: const TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: 23,
+              fontSize: 20,
             ),
           ),
           Row(
@@ -47,7 +49,7 @@ class ParameterButton extends StatelessWidget {
                 value,
                 style: const TextStyle(
                   fontWeight: FontWeight.w800,
-                  fontSize: 45,
+                  fontSize: 40,
                 ),
               ),
               Text(
@@ -59,7 +61,11 @@ class ParameterButton extends StatelessWidget {
               ),
             ],
           ),
-          icon
+          Icon(
+            icon,
+            color: iconColor,
+            size: 50,
+          ),
         ],
       ),
     );

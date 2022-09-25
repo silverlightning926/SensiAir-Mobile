@@ -5,7 +5,8 @@ class SensorNotification extends StatelessWidget {
   final String notificationHeader;
   final String notificationBody;
   final DateTime dateTimeStamp;
-  final Icon notificationIcon;
+  final IconData notificationIcon;
+  final Color iconColor;
 
   const SensorNotification({
     super.key,
@@ -14,6 +15,7 @@ class SensorNotification extends StatelessWidget {
     required this.notificationBody,
     required this.dateTimeStamp,
     required this.notificationIcon,
+    required this.iconColor,
   });
 
   @override
@@ -68,7 +70,11 @@ class SensorNotification extends StatelessWidget {
                 ),
               ],
             ),
-            notificationIcon,
+            Icon(
+              notificationIcon,
+              color: iconColor,
+              size: 50,
+            ),
           ],
         ),
       ),
