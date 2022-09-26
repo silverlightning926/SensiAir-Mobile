@@ -154,20 +154,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           email: emailController.text,
                           password: passwordController.text)
                       .then((value) {
-                    final user = <String, dynamic>{
-                      "userName": userNameController.text,
-                      "phone":
-                          '+${phoneController.value?.countryCode} ${phoneController.value?.getFormattedNsn(isoCode: phoneController.value?.isoCode)}',
-                    };
+                        final user = <String, dynamic>{
+                          "userName": userNameController.text,
+                          "phone":
+                              '+${phoneController.value?.countryCode} ${phoneController.value?.getFormattedNsn(isoCode: phoneController.value?.isoCode)}',
+                        };
 
-                    FirebaseFirestore.instance
-                        .collection("userInfo")
-                        .doc('${value.user?.uid}')
-                        .set(user);
-                  }).then((value) => {
+                        FirebaseFirestore.instance
+                            .collection("userInfo")
+                            .doc('${value.user?.uid}')
+                            .set(user);
+                      })
+                      .then((value) => {
                             Navigator.pushNamedAndRemoveUntil(
                                 context, '/home', (route) => false),
-                          });
+                          })
+                      .catchError((e) {
+                        setState(() {
+                          errorText = 'Something Went Wrong';
+                        });
+                      });
                 },
               ),
               Padding(
