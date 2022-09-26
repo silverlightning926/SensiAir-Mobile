@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:loader_overlay/loader_overlay.dart';
+import 'package:phone_form_field/phone_form_field.dart';
 
 import '../components/icon_text_field.dart';
 import '../components/photo_scaffold.dart';
@@ -19,7 +20,12 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController userNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
+  final PhoneController phoneController = PhoneController(
+    const PhoneNumber(
+      isoCode: IsoCode.US,
+      nsn: '',
+    ),
+  );
   final TextEditingController passwordController = TextEditingController();
 
   @override
@@ -73,14 +79,46 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     hintText: 'Email',
                   ),
-                  IconTextField(
-                    controller: phoneController,
-                    icon: const Icon(
-                      Icons.phone_rounded,
-                      color: Colors.white,
-                      size: 50,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15,
+                      horizontal: 35,
                     ),
-                    hintText: 'Phone Number',
+                    child: PhoneFormField(
+                      controller: phoneController,
+                      style: const TextStyle(
+                        color: Colors.white,
+                      ),
+                      countryCodeStyle: const TextStyle(
+                        color: Colors.white,
+                      ),
+                      decoration: const InputDecoration(
+                        filled: true,
+                        fillColor: Color(0xAA000000),
+                        icon: Icon(
+                          Icons.phone_rounded,
+                          color: Colors.white,
+                          size: 50,
+                        ),
+                        iconColor: Colors.white,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(25),
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(25),
+                          ),
+                        ),
+                        hintText: 'Phone',
+                        hintStyle: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
                   ),
                   IconTextField(
                     controller: passwordController,
@@ -104,7 +142,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       .then((value) {
                     final user = <String, dynamic>{
                       "userName": userNameController.text,
-                      "phone": phoneController.text,
+                      "phone":
+                          '+${phoneController.value?.countryCode} ${phoneController.value?.getFormattedNsn(isoCode: phoneController.value?.isoCode)}',
                     };
 
                     FirebaseFirestore.instance

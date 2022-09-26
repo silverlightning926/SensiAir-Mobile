@@ -17,6 +17,7 @@ dependencies:
   firebase_auth: ^3.10.0
   cloud_firestore: ^3.4.9
   loader_overlay: ^2.0.10
+  phone_form_field: ^7.0.2
 
 dev_dependencies:
   flutter_test:
