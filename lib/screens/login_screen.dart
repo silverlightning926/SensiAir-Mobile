@@ -20,8 +20,8 @@ class _LoginScreenState extends State<LoginScreen> {
   String errorText = '';
   @override
   Widget build(BuildContext context) {
-    return LoaderOverlay(
-      child: SafeArea(
+    return SafeArea(
+      child: LoaderOverlay(
         child: PhotoScaffold(
           imagePath: './assets/images/bgPhoto1.jpeg',
           body: Column(
@@ -47,63 +47,66 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  IconTextField(
-                    controller: emailController,
-                    icon: const Icon(
-                      Icons.account_circle_rounded,
-                      color: Colors.white,
-                      size: 50,
-                    ),
-                    hintText: 'Email',
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      IconTextField(
-                        controller: passwordController,
-                        obscureText: false,
-                        icon: const Icon(
-                          Icons.password_rounded,
-                          color: Colors.white,
-                          size: 50,
-                        ),
-                        hintText: 'Password',
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    IconTextField(
+                      controller: emailController,
+                      icon: const Icon(
+                        Icons.account_circle_rounded,
+                        color: Colors.white,
+                        size: 50,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 35,
+                      hintText: 'Email',
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        IconTextField(
+                          controller: passwordController,
+                          obscureText: false,
+                          icon: const Icon(
+                            Icons.password_rounded,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                          hintText: 'Password',
                         ),
-                        child: GestureDetector(
-                          onTap: () {},
-                          child: const Text(
-                            'Forgot Password',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 17,
-                              fontWeight: FontWeight.w400,
-                              decoration: TextDecoration.underline,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 35,
+                          ),
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: const Text(
+                              'Forgot Password',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 17,
+                                fontWeight: FontWeight.w400,
+                                decoration: TextDecoration.underline,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Text(
-                    errorText,
-                    style: const TextStyle(
-                      color: Colors.red,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
+                      ],
                     ),
-                  ),
-                ],
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Text(
+                      errorText,
+                      style: const TextStyle(
+                        color: Colors.red,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
+                ),
               ),
               RoundedButton(
                 buttonText: 'LOGIN',
