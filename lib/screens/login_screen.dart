@@ -111,19 +111,18 @@ class _LoginScreenState extends State<LoginScreen> {
               RoundedButton(
                 buttonText: 'LOGIN',
                 onPressed: () {
-                  try {
-                    FirebaseAuth.instance
-                        .signInWithEmailAndPassword(
-                            email: emailController.text,
-                            password: passwordController.text)
-                        .then(
-                          (value) => Navigator.pushNamed(context, '/home'),
-                        );
-                  } catch (e) {
+                  FirebaseAuth.instance
+                      .signInWithEmailAndPassword(
+                          email: emailController.text,
+                          password: passwordController.text)
+                      .then(
+                        (value) => Navigator.pushNamed(context, '/home'),
+                      )
+                      .catchError((e) {
                     setState(() {
                       errorText = 'Something Went Wrong';
                     });
-                  }
+                  });
                 },
               ),
               Padding(
