@@ -149,6 +149,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               RoundedButton(
                 buttonText: 'SIGN UP',
                 onPressed: () {
+                  context.loaderOverlay.show();
                   FirebaseAuth.instance
                       .createUserWithEmailAndPassword(
                           email: emailController.text,
@@ -170,6 +171,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 context, '/home', (route) => false),
                           })
                       .catchError((e) {
+                        context.loaderOverlay.hide();
                         setState(() {
                           errorText = 'Something Went Wrong';
                         });

@@ -111,14 +111,17 @@ class _LoginScreenState extends State<LoginScreen> {
               RoundedButton(
                 buttonText: 'LOGIN',
                 onPressed: () {
+                  context.loaderOverlay.show();
                   FirebaseAuth.instance
                       .signInWithEmailAndPassword(
                           email: emailController.text,
                           password: passwordController.text)
                       .then(
-                        (value) => Navigator.pushNamed(context, '/home'),
+                        (value) => Navigator.pushNamedAndRemoveUntil(
+                            context, '/home', (route) => false),
                       )
                       .catchError((e) {
+                    context.loaderOverlay.hide();
                     setState(() {
                       errorText = 'Something Went Wrong';
                     });
