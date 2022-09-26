@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 
@@ -5,8 +6,16 @@ import '../components/icon_text_field.dart';
 import '../components/photo_scaffold.dart';
 import '../components/rounded_button.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,17 +48,20 @@ class LoginScreen extends StatelessWidget {
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
+                children: [
                   IconTextField(
-                    icon: Icon(
+                    controller: emailController,
+                    icon: const Icon(
                       Icons.account_circle_rounded,
                       color: Colors.white,
                       size: 50,
                     ),
-                    hintText: 'Username',
+                    hintText: 'Email',
                   ),
                   IconTextField(
-                    icon: Icon(
+                    controller: passwordController,
+                    obscureText: false,
+                    icon: const Icon(
                       Icons.password_rounded,
                       color: Colors.white,
                       size: 50,
@@ -60,7 +72,15 @@ class LoginScreen extends StatelessWidget {
               ),
               RoundedButton(
                 buttonText: 'LOGIN',
-                onPressed: () {},
+                onPressed: () {
+                  FirebaseAuth.instance
+                      .signInWithEmailAndPassword(
+                          email: emailController.text,
+                          password: passwordController.text)
+                      .then(
+                        (value) => Navigator.pushNamed(context, '/home'),
+                      );
+                },
               ),
               Padding(
                 padding: const EdgeInsets.only(

@@ -33,60 +33,63 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return PhotoScaffold(
-      appBar: AppBar(
-        toolbarHeight: 75,
-        leading: Padding(
-          padding: const EdgeInsets.only(
-            top: 10,
-            left: 10,
-          ),
-          child: Image.asset('./assets/images/sensiableLogo.png'),
-        ),
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.account_circle_rounded,
-              size: 30,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: PhotoScaffold(
+        appBar: AppBar(
+          toolbarHeight: 75,
+          leading: Padding(
+            padding: const EdgeInsets.only(
+              top: 10,
+              left: 10,
             ),
+            child: Image.asset('./assets/images/sensiableLogo.png'),
           ),
-        ],
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.account_circle_rounded,
+                size: 30,
+              ),
+            ),
+          ],
+        ),
+        imagePath: './assets/images/bgPhoto2.jpeg',
+        bottomNavigationBar: BottomNavigationBar(
+          onTap: (value) {
+            setState(() {
+              _currentIndex = value;
+            });
+          },
+          currentIndex: _currentIndex,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: const Color.fromARGB(255, 45, 45, 45),
+          unselectedItemColor: Colors.white.withOpacity(0.5),
+          selectedItemColor: Colors.greenAccent,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.dashboard_rounded),
+              label: 'Dashboard',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.sensors_rounded),
+              label: 'Sensors',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.notifications_rounded),
+              label: 'Notifications',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings_rounded),
+              label: 'Settings',
+            ),
+          ],
+        ),
+        body: tabs[_currentIndex],
       ),
-      imagePath: './assets/images/bgPhoto2.jpeg',
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (value) {
-          setState(() {
-            _currentIndex = value;
-          });
-        },
-        currentIndex: _currentIndex,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: const Color.fromARGB(255, 45, 45, 45),
-        unselectedItemColor: Colors.white.withOpacity(0.5),
-        selectedItemColor: Colors.greenAccent,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard_rounded),
-            label: 'Dashboard',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.sensors_rounded),
-            label: 'Sensors',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_rounded),
-            label: 'Notifications',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings_rounded),
-            label: 'Settings',
-          ),
-        ],
-      ),
-      body: tabs[_currentIndex],
     );
   }
 }
