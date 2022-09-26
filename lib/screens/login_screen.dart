@@ -17,6 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  String errorText = '';
   @override
   Widget build(BuildContext context) {
     return LoaderOverlay(
@@ -31,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Image.asset(
                     './assets/images/sensiableLogo.png',
-                    scale: 2.5,
+                    scale: 3.5,
                   ),
                   const SizedBox(
                     height: 20,
@@ -41,12 +42,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 45,
+                      fontSize: 35,
                     ),
                   ),
                 ],
               ),
               Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconTextField(
@@ -58,15 +60,48 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     hintText: 'Email',
                   ),
-                  IconTextField(
-                    controller: passwordController,
-                    obscureText: false,
-                    icon: const Icon(
-                      Icons.password_rounded,
-                      color: Colors.white,
-                      size: 50,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      IconTextField(
+                        controller: passwordController,
+                        obscureText: false,
+                        icon: const Icon(
+                          Icons.password_rounded,
+                          color: Colors.white,
+                          size: 50,
+                        ),
+                        hintText: 'Password',
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 35,
+                        ),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: const Text(
+                            'Forgot Password',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 17,
+                              fontWeight: FontWeight.w400,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    errorText,
+                    style: const TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
                     ),
-                    hintText: 'Password',
                   ),
                 ],
               ),

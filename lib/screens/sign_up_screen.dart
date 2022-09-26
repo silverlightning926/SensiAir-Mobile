@@ -96,7 +96,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       decoration: const InputDecoration(
                         filled: true,
-                        fillColor: Color(0xAA000000),
+                        fillColor: Color.fromARGB(170, 107, 106, 106),
                         icon: Icon(
                           Icons.phone_rounded,
                           color: Colors.white,
@@ -106,18 +106,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.all(
-                            Radius.circular(25),
+                            Radius.circular(10),
                           ),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.all(
-                            Radius.circular(25),
+                            Radius.circular(10),
                           ),
                         ),
                         hintText: 'Phone',
                         hintStyle: TextStyle(
-                          color: Colors.grey,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white,
                         ),
                       ),
                     ),

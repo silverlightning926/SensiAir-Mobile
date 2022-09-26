@@ -14,8 +14,8 @@ class IconTextField extends StatelessWidget {
     Key? key,
     required this.icon,
     required this.hintText,
-    this.textFieldColor = const Color(0xAA000000),
-    this.hintTextColor = Colors.grey,
+    this.textFieldColor = const Color.fromARGB(170, 107, 106, 106),
+    this.hintTextColor = Colors.white,
     this.inputTextColor = Colors.white,
     this.controller,
     this.obscureText = false,
@@ -42,7 +42,7 @@ class IconTextField extends StatelessWidget {
           border: const OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(
-              Radius.circular(25),
+              Radius.circular(10),
             ),
           ),
           focusedBorder: const OutlineInputBorder(
@@ -53,6 +53,7 @@ class IconTextField extends StatelessWidget {
           ),
           hintText: hintText,
           hintStyle: TextStyle(
+            fontWeight: FontWeight.w400,
             color: hintTextColor,
           ),
         ),

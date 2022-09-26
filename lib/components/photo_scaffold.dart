@@ -25,6 +25,11 @@ class PhotoScaffold extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           fit: BoxFit.cover,
         ),
+        Expanded(
+          child: Container(
+            color: const Color.fromARGB(112, 0, 0, 0),
+          ),
+        ),
         Scaffold(
           appBar: appBar,
           bottomNavigationBar: bottomNavigationBar,

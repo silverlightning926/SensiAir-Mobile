@@ -19,7 +19,7 @@ class OpeningScreen extends StatelessWidget {
               children: [
                 Image.asset(
                   './assets/images/sensiableLogo.png',
-                  scale: 2.5,
+                  scale: 3.5,
                 ),
                 const SizedBox(
                   height: 20,
@@ -29,7 +29,7 @@ class OpeningScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 45,
+                    fontSize: 35,
                   ),
                 ),
               ],
@@ -49,7 +49,16 @@ class OpeningScreen extends StatelessWidget {
                   buttonText: 'SIGN UP',
                 ),
               ],
-            )
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 25,
+              ),
+              child: Divider(
+                color: Colors.white,
+                thickness: 2,
+              ),
+            ),
           ],
         ),
       ),
