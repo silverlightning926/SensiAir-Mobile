@@ -28,6 +28,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   );
   final TextEditingController passwordController = TextEditingController();
 
+  String errorText = '';
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -131,6 +133,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     hintText: 'Password',
                   ),
                 ],
+              ),
+              Text(
+                errorText,
+                style: const TextStyle(
+                  color: Colors.red,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18,
+                ),
               ),
               RoundedButton(
                 buttonText: 'SIGN UP',
