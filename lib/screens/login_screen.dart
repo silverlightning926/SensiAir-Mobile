@@ -68,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       IconTextField(
                         controller: passwordController,
-                        obscureText: false,
+                        obscureText: true,
                         icon: const Icon(
                           Icons.password_rounded,
                           color: Colors.white,
@@ -111,13 +111,19 @@ class _LoginScreenState extends State<LoginScreen> {
               RoundedButton(
                 buttonText: 'LOGIN',
                 onPressed: () {
-                  FirebaseAuth.instance
-                      .signInWithEmailAndPassword(
-                          email: emailController.text,
-                          password: passwordController.text)
-                      .then(
-                        (value) => Navigator.pushNamed(context, '/home'),
-                      );
+                  try {
+                    FirebaseAuth.instance
+                        .signInWithEmailAndPassword(
+                            email: emailController.text,
+                            password: passwordController.text)
+                        .then(
+                          (value) => Navigator.pushNamed(context, '/home'),
+                        );
+                  } catch (e) {
+                    setState(() {
+                      errorText = 'Something Went Wrong';
+                    });
+                  }
                 },
               ),
               Padding(
