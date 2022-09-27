@@ -81,7 +81,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           horizontal: 35,
                         ),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context, '/forgotPassword');
+                          },
                           child: const Text(
                             'Forgot Password',
                             style: TextStyle(
