@@ -70,20 +70,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               ),
               RoundedButton(
                 onPressed: () {
-                  context.loaderOverlay.show();
+                  setState(() {
+                    statusTextColor = Colors.white;
+                    statusText = 'Password Reset Email Sent!';
+                  });
+
                   FirebaseAuth.instance
                       .sendPasswordResetEmail(
-                        email: emailController.text,
-                      )
-                      .then((value) => () {
-                            context.loaderOverlay.hide();
-                            setState(() {
-                              statusTextColor = Colors.white;
-                              statusText = 'Password Reset Email Sent!';
-                            });
-                          })
+                    email: emailController.text,
+                  )
                       .catchError((e) {
-                    context.loaderOverlay.hide();
                     setState(() {
                       statusTextColor = Colors.red;
                       statusText = 'Something Went Wrong!';
