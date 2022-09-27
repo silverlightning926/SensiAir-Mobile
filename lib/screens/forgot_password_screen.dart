@@ -23,6 +23,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     return SafeArea(
       child: LoaderOverlay(
         child: PhotoScaffold(
+          appBar: AppBar(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+          ),
           imagePath: './assets/images/bgPhoto1.jpeg',
           body: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
