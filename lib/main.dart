@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -36,7 +37,8 @@ class SensiableESApp extends StatelessWidget {
           '/signup': (context) => const SignUpScreen(),
           '/home': (context) => const HomeScreen(),
         },
-        initialRoute: '/opening',
+        initialRoute:
+            FirebaseAuth.instance.currentUser != null ? '/home' : '/opening',
         debugShowCheckedModeBanner: false,
       ),
     );
