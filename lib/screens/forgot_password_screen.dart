@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:loader_overlay/loader_overlay.dart';
 import 'package:sensiable_es_mobile/components/icon_text_field.dart';
 import 'package:sensiable_es_mobile/components/photo_scaffold.dart';
 import 'package:sensiable_es_mobile/components/rounded_button.dart';

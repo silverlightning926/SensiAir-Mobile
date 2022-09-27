@@ -21,21 +21,18 @@ class _SensorTabState extends State<SensorTab> {
         ),
         ListView(
           padding: const EdgeInsets.all(10),
-          children: [
+          children: const [
             SensorButton(
               sensorName: 'Living Room',
-              buttonColor: const Color(0xFFAA0000),
-              onPressed: () {},
+              buttonColor: Color(0xFFAA0000),
             ),
             SensorButton(
               sensorName: 'Kitchen',
-              buttonColor: const Color(0xFF00AA00),
-              onPressed: () {},
+              buttonColor: Color(0xFF00AA00),
             ),
             SensorButton(
               sensorName: 'Bathroom',
-              buttonColor: const Color(0xFFAAAA00),
-              onPressed: () {},
+              buttonColor: Color(0xFFAAAA00),
             ),
           ],
         ),
