@@ -21,79 +21,77 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: LoaderOverlay(
-        child: PhotoScaffold(
-          appBar: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-          ),
-          imagePath: './assets/images/bgPhoto1.jpeg',
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      './assets/images/sensiableLogo.png',
-                      scale: 3.5,
+      child: PhotoScaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+        ),
+        imagePath: './assets/images/bgPhoto1.jpeg',
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    './assets/images/sensiableLogo.png',
+                    scale: 3.5,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    'SENSIABLE',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 35,
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Text(
-                      'SENSIABLE',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 35,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              IconTextField(
-                icon: const Icon(
-                  Icons.email,
-                  color: Colors.white,
-                  size: 50,
-                ),
-                hintText: 'Email',
-                controller: emailController,
+            ),
+            IconTextField(
+              icon: const Icon(
+                Icons.email,
+                color: Colors.white,
+                size: 50,
               ),
-              Text(
-                statusText,
-                style: TextStyle(
-                  color: statusTextColor,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
-                ),
+              hintText: 'Email',
+              controller: emailController,
+            ),
+            Text(
+              statusText,
+              style: TextStyle(
+                color: statusTextColor,
+                fontWeight: FontWeight.w600,
+                fontSize: 18,
               ),
-              RoundedButton(
-                onPressed: () {
-                  setState(() {
-                    statusTextColor = Colors.white;
-                    statusText = 'Password Reset Email Sent!';
-                  });
+            ),
+            RoundedButton(
+              onPressed: () {
+                setState(() {
+                  statusTextColor = Colors.white;
+                  statusText = 'Password Reset Email Sent!';
+                });
 
-                  FirebaseAuth.instance
-                      .sendPasswordResetEmail(
-                    email: emailController.text,
-                  )
-                      .catchError((e) {
-                    setState(() {
-                      statusTextColor = Colors.red;
-                      statusText = 'Something Went Wrong!';
-                    });
+                FirebaseAuth.instance
+                    .sendPasswordResetEmail(
+                  email: emailController.text,
+                )
+                    .catchError((e) {
+                  setState(() {
+                    statusTextColor = Colors.red;
+                    statusText = 'Something Went Wrong!';
                   });
-                },
-                buttonText: 'RESET',
-              ),
-            ],
-          ),
+                });
+              },
+              buttonText: 'RESET',
+            ),
+          ],
         ),
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:loader_overlay/loader_overlay.dart';
 import 'package:sensiable_es_mobile/screens/forgot_password_screen.dart';
 import 'firebase_options.dart';
 
@@ -24,18 +25,20 @@ class SensiableESApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Sensiable Environmental Sensor App',
-      theme: ThemeData.light().copyWith(),
-      routes: {
-        '/opening': (context) => const OpeningScreen(),
-        '/login': (context) => const LoginScreen(),
-        '/forgotPassword': (context) => const ForgotPasswordScreen(),
-        '/signup': (context) => const SignUpScreen(),
-        '/home': (context) => const HomeScreen(),
-      },
-      initialRoute: '/opening',
-      debugShowCheckedModeBanner: false,
+    return GlobalLoaderOverlay(
+      child: MaterialApp(
+        title: 'Sensiable Environmental Sensor App',
+        theme: ThemeData.light().copyWith(),
+        routes: {
+          '/opening': (context) => const OpeningScreen(),
+          '/login': (context) => const LoginScreen(),
+          '/forgotPassword': (context) => const ForgotPasswordScreen(),
+          '/signup': (context) => const SignUpScreen(),
+          '/home': (context) => const HomeScreen(),
+        },
+        initialRoute: '/opening',
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }
