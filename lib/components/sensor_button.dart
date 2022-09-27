@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 class SensorButton extends StatelessWidget {
   final Color buttonColor;
   final String sensorName;
-  final Function() onPressed;
 
   const SensorButton({
     Key? key,
     required this.buttonColor,
     required this.sensorName,
-    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -26,7 +24,9 @@ class SensorButton extends StatelessWidget {
         height: 75,
         padding: const EdgeInsets.all(15),
         color: buttonColor,
-        onPressed: onPressed,
+        onPressed: () {
+          Navigator.pushNamed(context, '/sensor');
+        },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

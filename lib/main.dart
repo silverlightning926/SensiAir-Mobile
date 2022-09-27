@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:sensiable_es_mobile/screens/forgot_password_screen.dart';
+import 'package:sensiable_es_mobile/screens/sensor_screen.dart';
 import 'firebase_options.dart';
 
 import 'screens/home_screen.dart';
@@ -36,6 +37,7 @@ class SensiableESApp extends StatelessWidget {
           '/forgotPassword': (context) => const ForgotPasswordScreen(),
           '/signup': (context) => const SignUpScreen(),
           '/home': (context) => const HomeScreen(),
+          '/sensor': (context) => const SensorScreen(),
         },
         initialRoute:
             FirebaseAuth.instance.currentUser != null ? '/home' : '/opening',
