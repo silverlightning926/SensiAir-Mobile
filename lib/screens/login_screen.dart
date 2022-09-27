@@ -117,10 +117,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     .signInWithEmailAndPassword(
                         email: emailController.text,
                         password: passwordController.text)
-                    .then(
-                      (value) => Navigator.pushNamedAndRemoveUntil(
-                          context, '/home', (route) => false),
-                    )
+                    .then((value) => {
+                          context.loaderOverlay.hide(),
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, '/home', (route) => false)
+                        })
                     .catchError((e) {
                   context.loaderOverlay.hide();
                   setState(() {

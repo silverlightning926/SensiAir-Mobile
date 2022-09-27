@@ -166,8 +166,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           .set(user);
                     })
                     .then((value) => {
+                          context.loaderOverlay.hide(),
                           Navigator.pushNamedAndRemoveUntil(
-                              context, '/home', (route) => false),
+                              context, '/home', (route) => false)
                         })
                     .catchError((e) {
                       context.loaderOverlay.hide();
