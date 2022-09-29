@@ -14,10 +14,8 @@ class _SensorTabState extends State<SensorTab> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Expanded(
-          child: Container(
-            color: const Color.fromARGB(255, 218, 218, 218),
-          ),
+        Container(
+          color: const Color.fromARGB(255, 218, 218, 218),
         ),
         ListView(
           padding: const EdgeInsets.all(10),
