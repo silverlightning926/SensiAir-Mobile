@@ -18,18 +18,18 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(const SensiableESApp());
+  runApp(const SensiAir());
 }
 
-class SensiableESApp extends StatelessWidget {
-  const SensiableESApp({super.key});
+class SensiAir extends StatelessWidget {
+  const SensiAir({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GlobalLoaderOverlay(
       child: MaterialApp(
-        title: 'SensiAIR',
+        title: 'SensiAir',
         theme: ThemeData.light().copyWith(),
         routes: {
           '/opening': (context) => const OpeningScreen(),
