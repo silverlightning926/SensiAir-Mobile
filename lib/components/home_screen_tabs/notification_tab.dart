@@ -12,27 +12,21 @@ class NotificationTab extends StatefulWidget {
 class _NotificationTabState extends State<NotificationTab> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Expanded(
-          child: Container(
-            color: const Color.fromARGB(255, 218, 218, 218),
+    return Container(
+      color: const Color.fromARGB(255, 218, 218, 218),
+      child: ListView(
+        padding: const EdgeInsets.all(10.0),
+        children: [
+          SensorNotification(
+            notificationColor: const Color(0xAAAA0000),
+            notificationHeader: 'Living Room',
+            notificationBody: 'Temperature crossed 45C',
+            dateTimeStamp: DateTime.now(),
+            notificationIcon: Icons.warning_rounded,
+            iconColor: Colors.yellow,
           ),
-        ),
-        ListView(
-          padding: const EdgeInsets.all(10.0),
-          children: [
-            SensorNotification(
-              notificationColor: const Color(0xAAAA0000),
-              notificationHeader: 'Living Room',
-              notificationBody: 'Temperature crossed 45C',
-              dateTimeStamp: DateTime.now(),
-              notificationIcon: Icons.warning_rounded,
-              iconColor: Colors.yellow,
-            ),
-          ],
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
