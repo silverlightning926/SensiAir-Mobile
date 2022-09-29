@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sensiable.sensiable_es_mobile">
    <application
-        android:label="sensiable_es_mobile"
+        android:label="SensiAIR"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

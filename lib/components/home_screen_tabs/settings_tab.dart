@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:loader_overlay/loader_overlay.dart';
-import 'package:sensiable_es_mobile/components/rounded_button.dart';
+
+import '../rounded_button.dart';
 
 class SettingsTab extends StatelessWidget {
   const SettingsTab({super.key});

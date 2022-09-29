@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sensiable_es_mobile/components/photo_scaffold.dart';
+
+import '../components/photo_scaffold.dart';
 
 class SensorScreen extends StatefulWidget {
   const SensorScreen({super.key});

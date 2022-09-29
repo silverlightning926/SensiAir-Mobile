@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:loader_overlay/loader_overlay.dart';
-import 'package:sensiable_es_mobile/screens/forgot_password_screen.dart';
-import 'package:sensiable_es_mobile/screens/sensor_screen.dart';
 import 'firebase_options.dart';
 
+import 'screens/forgot_password_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/opening_screen.dart';
+import 'screens/sensor_screen.dart';
 import 'screens/sign_up_screen.dart';
 
 Future<void> main() async {
@@ -29,7 +29,7 @@ class SensiableESApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlobalLoaderOverlay(
       child: MaterialApp(
-        title: 'Sensiable Environmental Sensor App',
+        title: 'SensiAIR',
         theme: ThemeData.light().copyWith(),
         routes: {
           '/opening': (context) => const OpeningScreen(),
