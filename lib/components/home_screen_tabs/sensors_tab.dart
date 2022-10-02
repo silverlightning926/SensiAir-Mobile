@@ -15,7 +15,6 @@ class _SensorTabState extends State<SensorTab> {
     return Container(
       color: const Color.fromARGB(255, 218, 218, 218),
       child: ListView(
-        padding: const EdgeInsets.all(10),
         children: const [
           SensorButton(
             sensorName: 'Living Room',
