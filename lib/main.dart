@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:loader_overlay/loader_overlay.dart';
+import 'package:sensiair/screens/sensor_settings_screen.dart';
 import 'firebase_options.dart';
 
 import 'screens/forgot_password_screen.dart';
@@ -38,6 +39,7 @@ class SensiAir extends StatelessWidget {
           '/signup': (context) => const SignUpScreen(),
           '/home': (context) => const HomeScreen(),
           '/sensor': (context) => const SensorScreen(),
+          '/sensorSettings': (context) => const SensorSettingsScreen()
         },
         initialRoute:
             FirebaseAuth.instance.currentUser != null ? '/home' : '/opening',

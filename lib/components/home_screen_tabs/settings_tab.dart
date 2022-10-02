@@ -24,7 +24,7 @@ class SettingsTab extends StatelessWidget {
               padding: const EdgeInsets.all(15),
               color: const Color(0xAA000000),
               onPressed: () {
-                Navigator.pushNamed(context, '/sensor');
+                Navigator.pushNamed(context, '/sensorSettings');
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,14 +51,17 @@ class SettingsTab extends StatelessWidget {
                 SensorButton(
                   sensorName: 'Living Room',
                   buttonColor: Color(0xFFAA0000),
+                  routeName: '/sensorSettings',
                 ),
                 SensorButton(
                   sensorName: 'Kitchen',
                   buttonColor: Color(0xFF00AA00),
+                  routeName: '/sensorSettings',
                 ),
                 SensorButton(
                   sensorName: 'Bathroom',
                   buttonColor: Color(0xFFAAAA00),
+                  routeName: '/sensorSettings',
                 ),
               ],
             ),
