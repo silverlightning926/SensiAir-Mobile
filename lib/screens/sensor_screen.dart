@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:mrx_charts/mrx_charts.dart';
 import 'package:sensiair/components/rounded_button.dart';
+import 'package:sensiair/constants/color_constants.dart';
 
 import '../components/photo_scaffold.dart';
 
@@ -35,7 +36,7 @@ class _SensorScreenState extends State<SensorScreen> {
                 child: Container(
                   padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
-                    color: const Color(0xAAFFFFFF),
+                    color: ColorConstants.panelBg,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Chart(
@@ -69,7 +70,7 @@ class _SensorScreenState extends State<SensorScreen> {
                         items: List.generate(
                           13 - 7 + 1,
                           (index) => ChartBarDataItem(
-                            color: const Color(0xFF8043F9),
+                            color: ColorConstants.chartColor,
                             value: Random().nextInt(280) + 20,
                             x: index.toDouble() + 7,
                           ),
@@ -92,7 +93,7 @@ class _SensorScreenState extends State<SensorScreen> {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: const Color(0xAAFFFFFF),
+                            color: ColorConstants.panelBg,
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -216,7 +217,7 @@ class _SensorScreenState extends State<SensorScreen> {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: const Color(0xAAFFFFFF),
+                            color: ColorConstants.panelBg,
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,

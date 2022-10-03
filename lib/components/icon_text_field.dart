@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sensiair/constants/color_constants.dart';
 import 'package:sensiair/constants/text_constants.dart';
 
 class IconTextField extends StatelessWidget {
@@ -15,7 +16,7 @@ class IconTextField extends StatelessWidget {
     Key? key,
     required this.icon,
     required this.hintText,
-    this.textFieldColor = const Color.fromARGB(170, 107, 106, 106),
+    this.textFieldColor = ColorConstants.textFieldBg,
     this.hintTextColor = Colors.white,
     this.inputTextColor = Colors.white,
     this.controller,

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sensiair/components/rounded_button.dart';
+import 'package:sensiair/constants/color_constants.dart';
 import 'package:sensiair/constants/text_constants.dart';
 
 import '../sensor_button.dart';
@@ -25,7 +26,7 @@ class SettingsTab extends StatelessWidget {
               ),
               height: 75,
               padding: const EdgeInsets.all(15),
-              color: const Color(0xAA000000),
+              color: ColorConstants.button,
               onPressed: () {
                 Navigator.pushNamed(context, '/sensorSettings');
               },
@@ -50,17 +51,17 @@ class SettingsTab extends StatelessWidget {
               children: const [
                 SensorButton(
                   sensorName: 'Living Room',
-                  buttonColor: Color(0xFFAA0000),
+                  buttonColor: Colors.red,
                   routeName: '/sensorSettings',
                 ),
                 SensorButton(
                   sensorName: 'Kitchen',
-                  buttonColor: Color(0xFF00AA00),
+                  buttonColor: Colors.green,
                   routeName: '/sensorSettings',
                 ),
                 SensorButton(
                   sensorName: 'Bathroom',
-                  buttonColor: Color(0xFFAAAA00),
+                  buttonColor: Colors.yellow,
                   routeName: '/sensorSettings',
                 ),
               ],

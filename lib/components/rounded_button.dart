@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sensiair/constants/color_constants.dart';
 import 'package:sensiair/constants/text_constants.dart';
 
 class RoundedButton extends StatelessWidget {
@@ -11,7 +12,7 @@ class RoundedButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     required this.buttonText,
-    this.buttonColor = const Color(0xAA000000),
+    this.buttonColor = ColorConstants.button,
     this.textColor = Colors.white,
   }) : super(key: key);
 

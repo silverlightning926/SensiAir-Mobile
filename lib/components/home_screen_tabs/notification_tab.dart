@@ -18,7 +18,7 @@ class _NotificationTabState extends State<NotificationTab> {
         padding: const EdgeInsets.all(10.0),
         children: [
           SensorNotification(
-            notificationColor: const Color(0xAAAA0000),
+            notificationColor: Colors.red,
             notificationHeader: 'Living Room',
             notificationBody: 'Temperature crossed 45C',
             dateTimeStamp: DateTime.now(),

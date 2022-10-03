@@ -18,15 +18,15 @@ class _SensorTabState extends State<SensorTab> {
         children: const [
           SensorButton(
             sensorName: 'Living Room',
-            buttonColor: Color(0xFFAA0000),
+            buttonColor: Colors.red,
           ),
           SensorButton(
             sensorName: 'Kitchen',
-            buttonColor: Color(0xFF00AA00),
+            buttonColor: Colors.green,
           ),
           SensorButton(
             sensorName: 'Bathroom',
-            buttonColor: Color(0xFFAAAA00),
+            buttonColor: Colors.yellow,
           ),
         ],
       ),
