@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:phone_form_field/phone_form_field.dart';
+import 'package:sensiair/constants/text_constants.dart';
 
 import '../components/icon_text_field.dart';
 import '../components/photo_scaffold.dart';
@@ -54,10 +55,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const Text(
                     'SENSIABLE',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 35,
-                    ),
+                    style: TextConstants.heading1,
                   ),
                 ],
               ),
@@ -90,12 +88,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   child: PhoneFormField(
                     controller: phoneController,
-                    style: const TextStyle(
-                      color: Colors.white,
-                    ),
-                    countryCodeStyle: const TextStyle(
-                      color: Colors.white,
-                    ),
+                    style: TextConstants.input,
+                    countryCodeStyle: TextConstants.inputHint,
                     decoration: const InputDecoration(
                       filled: true,
                       fillColor: Color.fromARGB(170, 107, 106, 106),
@@ -118,10 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                       hintText: 'Phone',
-                      hintStyle: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white,
-                      ),
+                      hintStyle: TextConstants.inputHint,
                     ),
                   ),
                 ),
@@ -139,11 +130,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
             Text(
               errorText,
-              style: const TextStyle(
-                color: Colors.red,
-                fontWeight: FontWeight.w600,
-                fontSize: 18,
-              ),
+              style: TextConstants.error,
             ),
             RoundedButton(
               buttonText: 'SIGN UP',
@@ -189,10 +176,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     children: [
                       const Text(
                         'Already have an account?',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                        ),
+                        style: TextConstants.normal,
                       ),
                       const SizedBox(
                         width: 10,
@@ -203,12 +187,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         },
                         child: const Text(
                           'Login',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w700,
-                            decoration: TextDecoration.underline,
-                          ),
+                          style: TextConstants.heavyLink,
                         ),
                       ),
                     ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sensiair/constants/text_constants.dart';
 
 class RoundedButton extends StatelessWidget {
   final Function() onPressed;
@@ -28,10 +29,7 @@ class RoundedButton extends StatelessWidget {
         ),
         child: Text(
           buttonText,
-          style: TextStyle(
-            color: textColor,
-            fontSize: 20,
-          ),
+          style: TextConstants.button,
         ),
       ),
     );

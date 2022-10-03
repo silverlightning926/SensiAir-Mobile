@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sensiair/constants/text_constants.dart';
 
 import '../parameter_button.dart';
 
@@ -52,19 +53,11 @@ class _DashboardTabState extends State<DashboardTab> {
                       children: const [
                         Text(
                           'Home',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 15,
-                          ),
+                          style: TextConstants.normalSmall,
                         ),
                         Text(
                           'Good',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 17,
-                          ),
+                          style: TextConstants.bold,
                         ),
                       ],
                     ),
@@ -83,11 +76,7 @@ class _DashboardTabState extends State<DashboardTab> {
                         ),
                         Text(
                           '1 min ago',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 15,
-                          ),
+                          style: TextConstants.normalSmall,
                         ),
                       ],
                     ),
@@ -112,19 +101,11 @@ class _DashboardTabState extends State<DashboardTab> {
                           children: [
                             Text(
                               widget.currentAQI.toString(),
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 45,
-                              ),
+                              style: TextConstants.displayParameter,
                             ),
                             const Text(
                               'AQI',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 15,
-                              ),
+                              style: TextConstants.normal,
                             ),
                           ],
                         ),
@@ -148,19 +129,11 @@ class _DashboardTabState extends State<DashboardTab> {
                           children: const [
                             Text(
                               'Ideal',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 10,
-                              ),
+                              style: TextConstants.normalSmall,
                             ),
                             Text(
                               '50',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 30,
-                              ),
+                              style: TextConstants.displayParameterSmall,
                             ),
                           ],
                         ),

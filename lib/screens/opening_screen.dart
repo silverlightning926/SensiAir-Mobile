@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/text_constants.dart';
+
 import '../components/photo_scaffold.dart';
 import '../components/rounded_button.dart';
 
@@ -27,10 +29,7 @@ class OpeningScreen extends StatelessWidget {
                 const Text(
                   'SENSIABLE',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 35,
-                  ),
+                  style: TextConstants.heading1,
                 ),
               ],
             ),

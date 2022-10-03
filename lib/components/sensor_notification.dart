@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sensiair/constants/text_constants.dart';
 
 class SensorNotification extends StatelessWidget {
   final Color notificationColor;
@@ -41,11 +42,7 @@ class SensorNotification extends StatelessWidget {
               children: [
                 Text(
                   notificationHeader,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 30,
-                  ),
+                  style: TextConstants.notificationHeading,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,11 +57,7 @@ class SensorNotification extends StatelessWidget {
                     ),
                     Text(
                       'Time: ${dateTimeStamp.hour % 12}:${dateTimeStamp.minute} on ${dateTimeStamp.day}/${dateTimeStamp.month}/${dateTimeStamp.year}',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 20,
-                      ),
+                      style: TextConstants.normal,
                     ),
                   ],
                 ),

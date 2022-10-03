@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:sensiair/components/rounded_button.dart';
+import 'package:sensiair/constants/text_constants.dart';
 
 import '../sensor_button.dart';
 
@@ -31,10 +34,7 @@ class SettingsTab extends StatelessWidget {
                 children: const [
                   Text(
                     'Add Sensor',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 35),
+                    style: TextConstants.sensorHeading,
                   ),
                   Icon(
                     Icons.add_circle_outline_rounded,
@@ -65,6 +65,18 @@ class SettingsTab extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          RoundedButton(
+            onPressed: () {
+              FirebaseAuth.instance.signOut().then(
+                    (value) => Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      '/opening',
+                      (route) => false,
+                    ),
+                  );
+            },
+            buttonText: 'Logout',
           ),
         ],
       ),

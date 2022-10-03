@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sensiair/constants/text_constants.dart';
 
 class IconTextField extends StatelessWidget {
   final Icon icon;
@@ -31,9 +32,7 @@ class IconTextField extends StatelessWidget {
       child: TextField(
         controller: controller,
         obscureText: obscureText,
-        style: TextStyle(
-          color: inputTextColor,
-        ),
+        style: TextConstants.input,
         decoration: InputDecoration(
           filled: true,
           fillColor: textFieldColor,
@@ -52,10 +51,7 @@ class IconTextField extends StatelessWidget {
             ),
           ),
           hintText: hintText,
-          hintStyle: TextStyle(
-            fontWeight: FontWeight.w400,
-            color: hintTextColor,
-          ),
+          hintStyle: TextConstants.inputHint,
         ),
       ),
     );

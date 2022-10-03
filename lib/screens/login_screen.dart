@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:loader_overlay/loader_overlay.dart';
+import 'package:sensiair/constants/text_constants.dart';
 
 import '../components/icon_text_field.dart';
 import '../components/photo_scaffold.dart';
@@ -41,10 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   const Text(
                     'SENSIABLE',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 35,
-                    ),
+                    style: TextConstants.heading1,
                   ),
                 ],
               ),
@@ -83,15 +81,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         onTap: () {
                           Navigator.pushNamed(context, '/forgotPassword');
                         },
-                        child: const Text(
-                          'Forgot Password',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w400,
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
+                        child: const Text('Forgot Password',
+                            style: TextConstants.lightLink),
                       ),
                     ),
                   ],
@@ -101,11 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Text(
                   errorText,
-                  style: const TextStyle(
-                    color: Colors.red,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 18,
-                  ),
+                  style: TextConstants.error,
                 ),
               ],
             ),
@@ -141,10 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       const Text(
                         'Don\'t have an account?',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                        ),
+                        style: TextConstants.normal,
                       ),
                       const SizedBox(
                         width: 10,
@@ -155,12 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         child: const Text(
                           'Sign Up',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w700,
-                            decoration: TextDecoration.underline,
-                          ),
+                          style: TextConstants.heavyLink,
                         ),
                       ),
                     ],

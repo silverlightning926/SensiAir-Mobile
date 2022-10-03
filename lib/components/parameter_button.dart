@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sensiair/constants/text_constants.dart';
 
 class ParameterButton extends StatelessWidget {
   final String title;
@@ -36,10 +37,7 @@ class ParameterButton extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.start,
-            style: const TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 20,
-            ),
+            style: TextConstants.heading2,
           ),
           Row(
             textBaseline: TextBaseline.alphabetic,
@@ -47,17 +45,11 @@ class ParameterButton extends StatelessWidget {
             children: [
               Text(
                 value,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w800,
-                  fontSize: 40,
-                ),
+                style: TextConstants.parameter,
               ),
               Text(
                 unit,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w300,
-                  fontSize: 25,
-                ),
+                style: TextConstants.parameterUnit,
               ),
             ],
           ),

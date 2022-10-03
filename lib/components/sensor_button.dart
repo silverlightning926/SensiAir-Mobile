@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sensiair/constants/text_constants.dart';
 
 class SensorButton extends StatelessWidget {
   final Color buttonColor;
@@ -34,11 +35,7 @@ class SensorButton extends StatelessWidget {
           children: [
             Text(
               sensorName,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w700,
-                fontSize: 35,
-              ),
+              style: TextConstants.sensorHeading,
             ),
             const Icon(
               Icons.arrow_circle_right_outlined,
